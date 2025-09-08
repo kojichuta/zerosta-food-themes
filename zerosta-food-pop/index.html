@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>居酒屋ポップ｜Zerosta Food Pop</title>
+  <meta name="description" content="賑やかで親しみやすい“居酒屋ポップ”。串焼き・刺身・唐揚げ・和牛のポップな居酒屋テーマサイト。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Heroの明るさ強化（全文置き換え用の上書きCSS） -->
+  <style>
+    /* 背景画像そのものを明るく・鮮やかに */
+    .hero-bg{
+      filter: saturate(1.08) contrast(1.05) brightness(1.10) !important;
+    }
+    /* オーバーレイはさらに薄めて被写体を見せる */
+    .hero-overlay{
+      background:
+        radial-gradient(60% 60% at 50% 40%, #0000000a 0%, #00000033 60%, #00000055 100%),
+        linear-gradient(180deg, #00000008, #00000022) !important;
+    }
+    /* Accessは画像なし運用。左は情報ブロックとして整える */
+    #access .access-left{ padding: 10px 0; }
+    #access .access-info p{ margin:.25rem 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" aria-label="サイトヘッダー">
+    <div class="container">
+      <a href="#top" class="brand">
+        <span class="logo-mark" aria-hidden="true">🍶</span>
+        <span class="brand-name">居酒屋ポップ</span>
+      </a>
+      <nav class="nav" aria-label="主要ナビ">
+        <a href="#concept">Concept</a>
+        <a href="#menu">Menu</a>
+        <a href="#chef">Chef</a>
+        <a href="#news">News</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#access">Access</a>
+        <a href="#reservation" class="btn btn-accent">予約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-bg" src="assets/img/hero.jpg" alt="現代的な飲食店の外観。大きなガラス越しに賑やかな店内が見える" />
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <h1 id="hero-title">今夜は、“うまい”で乾杯。</h1>
+        <p class="hero-lead">湯気、香り、笑い声。明るくてポップな居酒屋時間。</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="#reservation">空席確認・予約へ</a>
+          <a class="btn btn-ghost" href="#menu">メニューを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Concept ===== -->
+    <section id="concept" class="section section-dark" aria-labelledby="concept-title">
+      <div class="container">
+        <h2 id="concept-title" class="section-title">Concept</h2>
+        <p class="section-intro">賑やかで親しみやすい“居酒屋ポップ”。乾杯が似合う夜の気分を、色・光・音でデザイン。</p>
+
+        <div class="grid cards-3">
+          <article class="card">
+            <img src="assets/img/concept-01.jpg" alt="若者グループが笑顔で談笑する店内" />
+            <div class="card-body">
+              <h3>にぎわい設計</h3>
+              <p>木の温度感とやわらかな照明で、会話が弾む距離感。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/concept-02.jpg" alt="乾杯でビールジョッキを合わせるシーン" />
+            <div class="card-body">
+              <h3>乾杯ファースト</h3>
+              <p>最初の一杯を、いちばん楽しく。導線もスムーズに。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/concept-03.jpg" alt="活気あるカウンターと仕込みの様子" />
+            <div class="card-body">
+              <h3>仕込み主義</h3>
+              <p>素材と丁寧な下ごしらえで“ちゃんとうまい”を。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Menu ===== -->
+    <section id="menu" class="section" aria-labelledby="menu-title">
+      <div class="container">
+        <h2 id="menu-title" class="section-title">Menu</h2>
+        <p class="section-intro">定番で安心、でもちゃんと“うまい”。</p>
+
+        <div class="grid cards-4">
+          <article class="card menu-card">
+            <img src="assets/img/menu-01.jpg" alt="炭火焼の串焼き盛り合わせ" />
+            <div class="card-body">
+              <h3>串焼き盛り</h3>
+              <p>塩・タレをお好みで。</p>
+              <p class="price">¥780</p>
+            </div>
+          </article>
+          <article class="card menu-card">
+            <img src="assets/img/menu-02.jpg" alt="刺身三点盛り（まぐろ・サーモン・白身）" />
+            <div class="card-body">
+              <h3>刺身三点</h3>
+              <p>その日の仕入れで内容が変わります。</p>
+              <p class="price">¥980</p>
+            </div>
+          </article>
+          <article class="card menu-card">
+            <img src="assets/img/menu-03.jpg" alt="若鶏の唐揚げとレモン" />
+            <div class="card-body">
+              <h3>若鶏の唐揚げ</h3>
+              <p>熱々サクッと、定番人気。</p>
+              <p class="price">¥680</p>
+            </div>
+          </article>
+          <article class="card menu-card">
+            <img src="assets/img/menu-04.jpg" alt="霜降り和牛ステーキ（仕込み前・まな板の上）" />
+            <div class="card-body">
+              <h3>和牛ステーキ（仕込み）</h3>
+              <p>香り立つガーリックとハーブ。焼き上がりは別注で。</p>
+              <p class="price">¥1,980</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Chef ===== -->
+    <section id="chef" class="section section-dark" aria-labelledby="chef-title">
+      <div class="container">
+        <h2 id="chef-title" class="section-title">Chef</h2>
+        <div class="grid chefs">
+          <article class="chef-card">
+            <img src="assets/img/chef-01.jpg" alt="大将が炭火で焼き鳥を焼いている" />
+            <div class="chef-body">
+              <h3>大将</h3>
+              <p>炭の火加減と包丁の角度。毎日同じで、毎日違う。</p>
+            </div>
+          </article>
+          <article class="chef-card">
+            <img src="assets/img/chef-02.jpg" alt="笑顔の女性スタッフがカウンターで接客している" />
+            <div class="chef-body">
+              <h3>女性スタッフ</h3>
+              <p>明るくフレンドリー。料理とお客さまをつなぐ“場の力”。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== News ===== -->
+    <section id="news" class="section" aria-labelledby="news-title">
+      <div class="container">
+        <h2 id="news-title" class="section-title">News</h2>
+        <div class="grid cards-2">
+          <article class="card">
+            <img src="assets/img/news-01.jpg" alt="秋限定のさんま塩焼きと大根おろし・すだち" />
+            <div class="card-body">
+              <time datetime="2025-09-01" class="news-date">2025/09/01</time>
+              <h3>秋の限定：さんま塩焼き</h3>
+              <p>香ばしい脂と大根おろし、すだちを添えて。</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/news-02.jpg" alt="若者カップルが乾杯するハッピーアワーの様子" />
+            <div class="card-body">
+              <time datetime="2025-08-15" class="news-date">2025/08/15</time>
+              <h3>週末ハッピー乾杯</h3>
+              <p>金・土の17〜19時は最初の一杯がお得。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Gallery ===== -->
+    <section id="gallery" class="section section-dark" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="section-title">Gallery</h2>
+        <div class="grid gallery-4">
+          <img src="assets/img/gallery-01.jpg" alt="店内の全景とカウンターの様子" />
+          <img src="assets/img/gallery-02.jpg" alt="居酒屋定番料理の盛り合わせ" />
+          <img src="assets/img/gallery-03.jpg" alt="乾杯シーンのクローズアップ" />
+          <img src="assets/img/gallery-04.jpg" alt="料理を提供するカウンターの風景" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Access（画像なし運用） ===== -->
+    <section id="access" class="section" aria-labelledby="access-title">
+      <div class="container">
+        <h2 id="access-title" class="section-title">Access</h2>
+
+        <div class="access-wrap">
+          <div class="access-left">
+            <address class="access-info">
+              <p><strong>居酒屋ポップ 東京本店</strong></p>
+              <p>〒104-0031 東京都中央区京橋1-1-1（架空）</p>
+              <p>営業時間：17:00〜24:00（L.O. 23:30）／定休：日曜</p>
+              <p>TEL：<a href="tel:0312345678">03-1234-5678</a></p>
+            </address>
+          </div>
+          <div class="access-map">
+            <iframe title="Google Map" style="border:0;" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.899597398612!2d139.767125!3d35.681236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf06f21fdf9%3A0x2f9b4f0c5c9e!2z5pel5pys44CB5p2x5Lqs6YO95p2x5Lqs!5e0!3m2!1sja!2sjp!4v1690000000000">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reservation ===== -->
+    <section id="reservation" class="section section-accent" aria-labelledby="reservation-title">
+      <div class="container">
+        <h2 id="reservation-title" class="section-title">Reservation</h2>
+        <p class="section-intro">電話予約 or 予約サイト、どちらでもOK。空席状況をご確認ください。</p>
+        <div class="cta-row">
+          <a class="btn btn-ghost-light" href="tel:0312345678">電話で予約（03-1234-5678）</a>
+          <a class="btn btn-light" href="https://example.com/reserve" target="_blank" rel="noopener">予約サイトへ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="フッター">
+    <div class="container">
+      <p class="foot-brand">© Zerosta Food Pop</p>
+      <a class="foot-top" href="#top" aria-label="ページ上部へ">▲</a>
+    </div>
+  </footer>
+</body>
+</html>

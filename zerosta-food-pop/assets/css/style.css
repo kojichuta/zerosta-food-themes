@@ -1,0 +1,113 @@
+/* ====== Zerosta Food Pop Base ====== */
+:root{
+  --ink:#f8fafc;           /* 文字（明るい） */
+  --muted:#cbd5e1;         /* 補助テキスト */
+  --bg:#0b0f14;            /* 背景（夜） */
+  --panel:#121826;         /* カード背景 */
+  --line:#253046;          /* 罫線 */
+  --accent:#ef4444;        /* 提灯レッド */
+  --accent-2:#f59e0b;      /* 琥珀アンバー（ビール色） */
+  --ghost:#ffffff0f;       /* うっすらボタン背景 */
+  --radius:18px;
+  --container:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP",Meiryo,sans-serif;line-height:1.65}
+img{max-width:100%;display:block}
+
+.container{max-width:var(--container);margin-inline:auto;padding-inline:20px}
+
+/* ===== Header ===== */
+.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0b0f14cc,#0b0f1400);backdrop-filter:saturate(1.2) blur(6px)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-weight:700}
+.logo-mark{font-size:20px}
+.brand-name{letter-spacing:.04em}
+.nav{display:flex;gap:14px;flex-wrap:wrap}
+.nav a{color:var(--ink);text-decoration:none;opacity:.9;padding:8px 10px;border-radius:10px}
+.nav a:hover{background:var(--ghost)}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid transparent;transition:transform .05s ease}
+.btn:active{transform:translateY(1px)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-ghost{background:transparent;border-color:#ffffff33;color:#fff}
+.btn-light{background:#fff;color:#111}
+.btn-ghost-light{background:transparent;border-color:#ffffff66;color:#fff}
+
+/* ===== Sections ===== */
+.section{padding:64px 0;background:transparent}
+.section-dark{background:linear-gradient(180deg,#0e1422, #0b0f14)}
+.section-accent{background:linear-gradient(180deg,#1b1111,#2a110f)}
+.section-title{font-size:28px;margin:0 0 12px}
+.section-intro{color:var(--muted);margin:0 0 28px}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:68vh;display:grid;place-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05) brightness(.82)}
+.hero-overlay{position:absolute;inset:0;background:
+  radial-gradient(60% 60% at 50% 40%, #00000020 0%, #00000070 60%, #000000b0 100%),
+  linear-gradient(180deg,#00000020,#00000080)
+}
+.hero-inner{position:relative;text-align:center}
+.hero h1{font-size: clamp(28px, 6vw, 56px);margin:0 0 10px;text-shadow:0 4px 24px #00000080}
+.hero-lead{color:#e5e7eb;margin:0 0 24px}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===== Cards & Grids ===== */
+.grid{display:grid;gap:18px}
+.cards-3{grid-template-columns:repeat(3,1fr)}
+.cards-4{grid-template-columns:repeat(4,1fr)}
+.cards-2{grid-template-columns:repeat(2,1fr)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.card img{aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:16px}
+.card-body h3{margin:0 0 6px;font-size:18px}
+.price{color:var(--accent-2);font-weight:800;margin-top:6px}
+
+/* Menu cards emphasize */
+.menu-card .card-body{border-top:3px solid var(--accent)}
+
+/* Chef */
+.chefs{grid-template-columns:repeat(2,1fr)}
+.chef-card{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.chef-card img{width:160px;height:160px;border-radius:14px;object-fit:cover}
+
+/* Gallery */
+.gallery-4{grid-template-columns:repeat(4,1fr)}
+.gallery-4 img{aspect-ratio:1/1;object-fit:cover;border-radius:12px}
+
+/* Access */
+.access-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.access-left img{border-radius:var(--radius);border:1px solid var(--line);margin-bottom:14px}
+.access-info p{margin:.2rem 0}
+.access-map iframe{width:100%;height:360px;border-radius:var(--radius);border:1px solid var(--line);}
+
+/* Reservation */
+.section-accent{border-top:1px solid #3b0f0f;border-bottom:1px solid #3b0f0f}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.cta-row .btn{padding:14px 22px}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:28px 0;background:#0a0e15}
+.site-footer .container{display:flex;align-items:center;justify-content:space-between}
+.foot-brand{margin:0;color:var(--muted)}
+.foot-top{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 10px;border-radius:10px}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .cards-4{grid-template-columns:repeat(2,1fr)}
+  .gallery-4{grid-template-columns:repeat(2,1fr)}
+  .access-wrap{grid-template-columns:1fr}
+  .chef-card{grid-template-columns:120px 1fr}
+}
+@media (max-width:640px){
+  .cards-3{grid-template-columns:1fr}
+  .cards-2{grid-template-columns:1fr}
+  .chef-card{grid-template-columns:1fr}
+  .hero{min-height:58vh}
+  .section{padding:48px 0}
+  .site-header .nav{display:none} /* 最初は消して簡潔に */
+}

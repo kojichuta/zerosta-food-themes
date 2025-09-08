@@ -1,0 +1,175 @@
+/* =========================================================
+   Zerosta Food - Relax  (CSS-only, hamburger ready)
+   画像は assets/img/ 直下を参照します
+   --------------------------------------------------------- */
+
+/* ---- Reset-ish ---- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+:root{
+  --ink:#2c2c2c;
+  --muted:#646464;
+  --bg:#faf7f1;
+  --surface:#ffffff;
+  --line: rgba(0,0,0,.08);
+  --accent:#6aa37a;      /* グリーン（Relax） */
+  --accent-ghost:#e6f2ea;/* 薄いグリーン */
+  --shadow: 0 10px 26px rgba(0,0,0,.10);
+  --radius: 14px;
+}
+
+/* ---- Globals ---- */
+body{ font-family: system-ui,-apple-system,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif; color:var(--ink); background:var(--bg); line-height:1.8; }
+.zf-container{ width:min(1100px, 92%); margin-inline:auto; }
+.zf-section{ padding: clamp(56px, 7vw, 104px) 0; }
+.zf-title{ font-size: clamp(26px, 2.6vw, 36px); margin: 0 0 14px; }
+.zf-lead{ color:#444; margin: 0 0 26px; }
+
+/* ---- Header ---- */
+.zf-header{ position: sticky; top:0; z-index: 40; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom:1px solid var(--line); }
+.zf-header__inner{ display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; }
+.zf-logo{ font-weight: 800; letter-spacing:.02em; color:#243c2b; }
+.zf-logo span{ color: var(--accent); }
+.zf-logo small{ color:#7a7a7a; font-weight:600; margin-left:.25em; }
+
+/* nav (desktop) */
+.zf-nav{ display:flex; align-items:center; gap:18px; }
+.zf-btn{ display:inline-block; padding:.72em 1.1em; background:var(--accent); color:#fff; border-radius:10px; box-shadow: var(--shadow); }
+.zf-btn--sm{ padding:.55em .9em; }
+.zf-btn--ghost{ background:var(--accent-ghost); color:#1f3a2a; box-shadow:none; }
+
+/* CSS-only hamburger */
+.zf-nav__toggle{ display:none; }
+.zf-nav__btn{ display:none; position:relative; width:44px; height:44px; border-radius:10px; border:1px solid var(--line); background:#fff; }
+.zf-nav__btn span{ position:absolute; left:10px; right:10px; height:2px; background:#1f1f1f; transform-origin:center; transition:.2s; }
+.zf-nav__btn span:nth-child(1){ top:12px; }
+.zf-nav__btn span:nth-child(2){ top:21px; }
+.zf-nav__btn span:nth-child(3){ top:30px; }
+
+@media (max-width: 960px){
+  .zf-nav__btn{ display:inline-block; }
+  .zf-nav{
+    position:absolute; right:4%; top:60px; flex-direction:column; gap:10px;
+    background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow: var(--shadow);
+    padding:10px; display:none; width: min(88vw, 340px);
+  }
+  .zf-nav__toggle:checked ~ .zf-nav{ display:flex; }
+  .zf-nav__toggle:checked + .zf-nav__btn span:nth-child(1){ transform: translateY(9px) rotate(45deg); }
+  .zf-nav__toggle:checked + .zf-nav__btn span:nth-child(2){ opacity:0; }
+  .zf-nav__toggle:checked + .zf-nav__btn span:nth-child(3){ transform: translateY(-9px) rotate(-45deg); }
+}
+
+/* ---- Hero ---- */
+.zf-hero{
+  position: relative;
+  background: #e8efe9; /* フォールバック（画像未読込時） */
+  min-height: clamp(56vh, 68vh, 78vh);
+  display:flex; align-items:center;
+}
+.zf-hero__bg{
+  position:absolute; inset:0;
+  background: url('../img/hero.jpg') center/cover no-repeat;
+  filter: saturate(1.02) contrast(1.02);
+  z-index: 0;
+}
+/* ※白いオーバーレイや黒板は使わない。文字だけ軽く強調。 */
+.zf-hero__inner{ position:relative; z-index:1; text-align:center; }
+.zf-hero__title{ 
+  font-size: clamp(28px, 4vw, 48px); 
+  margin: 0 0 .35em;
+  color:#fff; 
+  text-shadow: 0 2px 10px rgba(0,0,0,.35), 0 0 2px rgba(0,0,0,.35);
+}
+.zf-hero__sub{
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+  margin: 0 0 1.1em;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+.zf-hero__cta{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+
+/* ---- Grid ---- */
+.zf-grid{ display:grid; gap: 20px; }
+.zf-grid--2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.zf-grid--3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+.zf-grid--4{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+
+@media (max-width: 1024px){
+  .zf-grid--4{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 768px){
+  .zf-grid--3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px){
+  .zf-grid--2, .zf-grid--3, .zf-grid--4{ grid-template-columns: 1fr; }
+}
+
+/* ---- Cards / Photos ---- */
+.zf-card--photo img{ border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.zf-card--photo figcaption{ margin-top: 8px; color:#555; font-size:14px; }
+
+/* ---- Menu ---- */
+.zf-menu img{ border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.zf-menu figcaption h3{ margin: .6em 0 .2em; font-size: 18px; }
+.zf-menu figcaption p{ margin: 0; color:#555; }
+
+/* ---- Chef ---- */
+.zf-chef__list{ display:grid; gap:20px; }
+/* PCは「左右2段（縦に2カード）」ではなく、**1列に2つ**並ぶイメージ */
+@media (min-width: 961px){
+  .zf-chef__list{ grid-template-columns: 1fr; }
+}
+.zf-chef{
+  display:grid; gap:20px; align-items:center;
+  grid-template-columns: 360px 1fr; /* 左に写真、右に説明 */
+}
+.zf-chef img{ border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.zf-chef__body h3{ margin: 0 0 .25em; }
+@media (max-width: 800px){
+  .zf-chef{ grid-template-columns: 1fr; } /* スマホは縦並び */
+}
+
+/* ---- News ---- */
+.zf-news{ display:grid; gap:18px; align-items:start; grid-template-columns: 280px 1fr; }
+.zf-news img{ border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.zf-news__body h3{ margin:.2em 0 .3em; }
+.zf-news__body time{ display:block; margin-top:.25em; color:#777; font-size:14px; }
+@media (max-width: 800px){ .zf-news{ grid-template-columns: 1fr; } }
+
+/* ---- Gallery ---- */
+#gallery .zf-grid--4 figure img{ border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+
+/* ---- Access ---- */
+.zf-access__map iframe{ width:100%; height:360px; border:0; border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+.zf-access__info{ margin-top: 12px; color:#444; }
+.zf-access figure img{ height:360px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+
+/* ---- Footer ---- */
+.zf-footer{ text-align:center; color:#666; padding: 26px 0; border-top:1px solid var(--line); }
+
+/* ---- Utilities ---- */
+@media (prefers-reduced-motion: no-preference){
+  .zf-card--photo img,
+  .zf-menu img,
+  .zf-news img{ transition: transform .25s ease, box-shadow .25s ease; }
+  .zf-card--photo:hover img,
+  .zf-menu:hover img,
+  .zf-news:hover img{ transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+}
+/* === Reservation セクション調整 === */
+#reserve {
+  text-align: center;
+}
+#reserve .zf-title {
+  text-align: center;
+}
+#reserve p {
+  margin: 0 0 1em;
+}
+#reserve .zf-btn {
+  margin-top: 0.5em;
+}
