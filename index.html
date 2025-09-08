@@ -1,0 +1,41 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zerosta Food</title>
+<style>
+:root{--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#fff}
+body{font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
+.wrap{max-width:900px;margin:64px auto;padding:0 20px}
+h1{font-size:clamp(28px,5vw,40px);margin:0 0 8px}
+p{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:inherit}
+.card:hover{box-shadow:0 10px 24px rgba(2,6,23,.08);transform:translateY(-1px)}
+.tag{display:inline-block;background:#f0f9ff;color:#0369a1;font-weight:700;padding:2px 8px;border-radius:999px;font-size:12px;margin-bottom:6px}
+.ttl{font-weight:800;font-size:18px;margin:2px 0 6px}
+.desc{color:var(--muted);font-size:14px;line-height:1.6}
+</style></head><body>
+<main class="wrap">
+  <h1>Zerosta Food</h1>
+  <p>シック → リラックス → ポップ の順でご覧ください。</p>
+  <section class="grid">
+    <!-- ① Chic -->
+    <a class="card" href="./zerosta-food-chic/">
+      <span class="tag">Chic</span>
+      <div class="ttl">ゼロスタフード — シック</div>
+      <div class="desc">ミニマル＆モノトーン。写真が映える落ち着きトーン。</div>
+    </a>
+    <!-- ② Relax -->
+    <a class="card" href="./zerosta-food-relax/">
+      <span class="tag">Relax</span>
+      <div class="ttl">ゼロスタフード — リラックス</div>
+      <div class="desc">自然素材×ナチュラル配色。やさしい雰囲気。</div>
+    </a>
+    <!-- ③ Pop -->
+    <a class="card" href="./zerosta-food-pop/">
+      <span class="tag">Pop</span>
+      <div class="ttl">ゼロスタフード — ポップ</div>
+      <div class="desc">明るく元気。居酒屋・カフェにも相性◎。</div>
+    </a>
+  </section>
+</main>
+</body></html>
